@@ -1,13 +1,201 @@
+@import url("https://fonts.googleapis.com/css?family=Spartan&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-color: #f6fedb;
+}
+.page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f6fedb;
+  font-family: "Spartan", sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.yrglset {
+  color: #f46036;
+  padding-top: 0.2em;
+  padding-bottom: 0;
+}
+header h1 {
+  padding: 0.2em;
+}
+
+.goal {
+  width: 40%;
+  text-align: center;
+}
+.reason {
+  width: 40%;
+  text-align: center;
+}
+.thingsIWannaDo {
+  width: 40%;
+  text-align: center;
+}
+.butWhy {
+  width: 40%;
+  text-align: center;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  background-color: #fcfc62;
+}
+.goalsList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 70%;
+}
+
+.goalsTitle {
+  font-weight: bold;
+  background-color: #175676;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1em;
+}
+
+.completedGoalList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 70%;
+}
+
+.goalListItem1 {
+  display: flex;
+  justify-content: space-between;
+}
+.goalListItem2 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.completedGoalItem {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* .goalsTitle {
+  display: flex;
+  justify-content: space-between;
+} */
+
+.year {
+  font-size: 2em;
+}
+
+.dummyButton {
+  color: #175676;
+  background-color: #175676;
+  border: 0;
+}
+.completedGoalsTitles {
+  font-weight: bold;
+  justify-content: space-between;
+  display: flex;
+  background-color: #f46036;
+  color: white;
+}
+.completedWhat {
+  width: 30%;
+  text-align: center;
+}
+.completedWhy {
+  width: 30%;
+  text-align: center;
+}
+.completedThoughts {
+  width: 40%;
+  text-align: center;
+}
+.thoughts {
+  height: 3em;
+  width: 70%;
+}
+
+.thoughtsContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 70%;
+  padding: 2em;
+}
+label {
+  width: 30%;
+  font-size: 1.5em;
+  color: red;
+  text-align: center;
+}
+
+.submit {
+  margin-left: 0.5em;
+}
+
+.btn {
+  background-color: #f46036;
+  border: none;
+  color: white;
+  height: 3em;
+  font-size: 0.5em;
+  cursor: pointer;
+  align-self: center;
+  border-radius: 5em;
+}
+.btnComplete {
+  background-color: #175676;
+  border: none;
+  color: white;
+  height: 3em;
+  font-size: 0.5em;
+  cursor: pointer;
+  align-self: center;
+  border-radius: 5em;
+}
+.btnDummy {
+  background-color: #175676;
+  border: none;
+  color: #175676;
+  padding: 0.5em 1em;
+  font-size: 0.5em;
+}
+
+.btn:hover {
+  background-color: RoyalBlue;
+}
+
+.addGoalButton {
+  background-color: #4caf50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+.addGoalButton:hover {
+  color: #000000;
+  background-color: #ffffff;
+}
+
+.newGoalContainer {
+  padding-top: 3em;
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.newGoalText {
+  width: 40%;
+}
+
+.newGoalReasonText {
+  width: 40%;
 }
