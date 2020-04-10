@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "8c1fd2eeef036b248d44b3309c3c3759",
+    "revision": "1e688368aadd53da55ea84ad731da0a1",
     "url": "/yrglset/index.html"
   },
   {
