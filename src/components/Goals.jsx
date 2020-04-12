@@ -3,22 +3,16 @@ import GoalsTitles from "./GoalsTitles";
 import AddGoalBox from "./AddGoalBox";
 import GoalsList from "./GoalsList";
 import CompletedTaskBox from "./CompletedTaskBox";
+import * as api from "../API/api";
 
 class Goals extends Component {
   state = {
-    goals: [
-      { goal: "Visit Hullshshg", reason: "whales and stuff" },
-      {
-        goal: "learn to bake a cookie",
-        reason: "so i have a go-to baked good"
-      },
-      { goal: "write up big trip", reason: "to reconnect" }
-    ],
-    index: "",
+    completedGoal: "",
     addGoal: false,
     newGoalValue: "",
     newGoalReasonValue: "",
-    value: ""
+    value: "",
+    on: false
   };
   render() {
     return (
@@ -26,7 +20,7 @@ class Goals extends Component {
         <ul className="goalsList">
           <GoalsTitles toggleNewGoal={this.toggleNewGoal} />
           <GoalsList
-            goals={this.state.goals}
+            apiGoals={this.props.apiGoals}
             removeItem={this.removeItem}
             toggle={this.toggle}
           />
@@ -40,6 +34,7 @@ class Goals extends Component {
           handleGoalReasonsValueChange={this.handleGoalReasonsValueChange}
         />
         <CompletedTaskBox
+          completedGoal={this.state.completedGoal}
           on={this.state.on}
           handleSubmitUpdateGoals={this.handleSubmitUpdateGoals}
           value={this.state.value}
@@ -50,55 +45,43 @@ class Goals extends Component {
   }
   handleSubmitUpdateGoals = event => {
     event.preventDefault();
-    this.setState(currentState => {
-      const completedGoal = { ...currentState.goals[currentState.index] };
-      completedGoal.thoughts = currentState.value;
-      this.props.handleSubmitUpdateCompleted(completedGoal);
-      const filteredGoals = currentState.goals.filter((goal, i) => {
-        if (i !== currentState.index) return goal;
-        else return null;
-      });
-      return {
-        goals: filteredGoals,
-        value: "",
-        on: false
-      };
+    api
+      .completeGoal(this.state.completedGoal, this.state.value, this.props.year)
+      .then(([completedGoal]) =>
+        this.props.updateGoalsCompletedGoal(completedGoal)
+      )
+      .then(this.setState({ on: false, value: "" }));
+  };
+
+  toggle = entry => {
+    this.setState({
+      on: !this.state.on,
+      completedGoal: entry,
+      addGoal: false
     });
   };
 
-  toggle = i => {
-    this.setState({ on: !this.state.on, index: i, addGoal: false });
-  };
-
-  removeItem = index => {
-    this.setState(currentState => {
-      const filteredGoals = currentState.goals.filter((goal, i) => {
-        if (i !== index) return goal;
-        else return null;
-      });
-      return {
-        goals: filteredGoals,
-        addGoal: false,
-        on: false
-      };
-    });
+  removeItem = entry => {
+    api.removeItem(entry).then(this.props.updateGoalsDeletedGoal(entry));
   };
 
   handleNewGoalSubmit = event => {
-    event.preventDefault();
-    this.setState(currentState => {
-      const newGoal = {
-        goal: currentState.newGoalValue,
-        reason: currentState.newGoalReasonValue
-      };
-      const newGoalsList = [...currentState.goals, newGoal];
-      return {
-        goals: newGoalsList,
-        addGoal: false,
-        newGoalValue: "",
-        newGoalReasonValue: ""
-      };
-    });
+    const newGoal = {
+      year: this.props.year,
+      goal: this.state.newGoalValue,
+      reason: this.state.newGoalReasonValue
+    };
+    api
+      .addNewGoal(newGoal, this.props.year)
+      .then(([addedGoal]) => this.props.updateGoalsNewGoal(addedGoal))
+      .then(
+        this.setState({
+          addGoal: false,
+          newGoalValue: "",
+          newGoalReasonValue: ""
+        })
+      );
+    // .then(this.props.updateGoals(this.props.year));
   };
 
   handleGoalValueChange = event => {
