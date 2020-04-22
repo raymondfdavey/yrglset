@@ -1,4 +1,5 @@
 import React from "react";
+import star from "../img/star.png";
 
 function GoalsList(props) {
   return (
@@ -13,20 +14,20 @@ function GoalsList(props) {
               <p className="goal">{entry.goal}</p>
               <p className="reason">{entry.reason}</p>
               <button
+                className="didItButton"
+                onClick={() => {
+                  props.toggle(entry);
+                }}
+              >
+                COMPLETE!
+              </button>
+              <button
                 onClick={() => {
                   props.removeItem(entry, i);
                 }}
                 className="btn"
               >
                 remove
-              </button>
-              <button
-                className="didItButton"
-                onClick={() => {
-                  props.toggle(entry);
-                }}
-              >
-                I DID IT!!!
               </button>
             </li>
           );
