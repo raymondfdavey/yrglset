@@ -20,7 +20,7 @@ class LoginBox extends Component {
             onChange={this.handlePasswordChange}
           />
           <button>login</button>
-          <Link to="newUser">
+          <Link to="/yrglset/newUser">
             <p className="newUser" onClick={() => this.props.toggleLogin()}>
               new user
             </p>

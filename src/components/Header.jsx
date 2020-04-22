@@ -4,7 +4,7 @@ import { Link } from "@reach/router";
 function Header(props) {
   return (
     <header className="header">
-      <Link to="/">
+      <Link to="/yrglset">
         <h1>YEARLY GOAL SETTER </h1>
       </Link>
       <h1>(</h1>

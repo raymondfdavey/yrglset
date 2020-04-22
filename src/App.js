@@ -15,8 +15,8 @@ class App extends Component {
           <LoginBox login={this.state.login} toggleLogin={this.toggleLogin} />
         )}
         <Router>
-          <NewHome path="/" />
-          <NewUser path="newUser" />
+          <NewHome path="/yrglset" />
+          <NewUser path="/yrglset/newUser" />
         </Router>
       </div>
     );
