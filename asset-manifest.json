@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/yrglset/static/css/main.f4831979.chunk.css",
-    "main.js": "/yrglset/static/js/main.f5705e67.chunk.js",
-    "main.js.map": "/yrglset/static/js/main.f5705e67.chunk.js.map",
+    "main.js": "/yrglset/static/js/main.17708871.chunk.js",
+    "main.js.map": "/yrglset/static/js/main.17708871.chunk.js.map",
     "runtime-main.js": "/yrglset/static/js/runtime-main.d514da7e.js",
     "runtime-main.js.map": "/yrglset/static/js/runtime-main.d514da7e.js.map",
-    "static/js/2.1ce47193.chunk.js": "/yrglset/static/js/2.1ce47193.chunk.js",
-    "static/js/2.1ce47193.chunk.js.map": "/yrglset/static/js/2.1ce47193.chunk.js.map",
+    "static/js/2.5c9f7d41.chunk.js": "/yrglset/static/js/2.5c9f7d41.chunk.js",
+    "static/js/2.5c9f7d41.chunk.js.map": "/yrglset/static/js/2.5c9f7d41.chunk.js.map",
     "index.html": "/yrglset/index.html",
-    "precache-manifest.d2de3ac66e709d6cf8a209cf9cd8856c.js": "/yrglset/precache-manifest.d2de3ac66e709d6cf8a209cf9cd8856c.js",
+    "precache-manifest.bf5b8fffce3278031dc01fe225430903.js": "/yrglset/precache-manifest.bf5b8fffce3278031dc01fe225430903.js",
     "service-worker.js": "/yrglset/service-worker.js",
     "static/css/main.f4831979.chunk.css.map": "/yrglset/static/css/main.f4831979.chunk.css.map",
-    "static/js/2.1ce47193.chunk.js.LICENSE.txt": "/yrglset/static/js/2.1ce47193.chunk.js.LICENSE.txt"
+    "static/js/2.5c9f7d41.chunk.js.LICENSE.txt": "/yrglset/static/js/2.5c9f7d41.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.d514da7e.js",
-    "static/js/2.1ce47193.chunk.js",
+    "static/js/2.5c9f7d41.chunk.js",
     "static/css/main.f4831979.chunk.css",
-    "static/js/main.f5705e67.chunk.js"
+    "static/js/main.17708871.chunk.js"
   ]
 }
