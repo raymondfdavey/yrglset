@@ -49,9 +49,14 @@ class Home extends Component {
   };
 
   componentDidMount() {
+      console.log("HERE")
     const date = new Date();
     const year = date.getFullYear();
     api.fetchGoalsByYear(year).then((goals) => {
+      console.log("HERE2");
+      console.log(goals);
+
+
       this.setState({ goals, year });
     });
   }
